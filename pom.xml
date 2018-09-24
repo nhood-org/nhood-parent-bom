@@ -27,6 +27,8 @@
         <!--Java 10 overrides-->
         <javax.xml.bind.version>2.3.0</javax.xml.bind.version>
         <javax.activation.version>1.1.1</javax.activation.version>
+
+        <lombok.version>1.18.2</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -71,7 +73,22 @@
                 <artifactId>activation</artifactId>
                 <version>${javax.activation.version}</version>
             </dependency>
+
+            <!--Auxiliaries-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 </project>
