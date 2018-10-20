@@ -23,5 +23,6 @@ jobs:
     steps:
     - checkout
 
-    # run tests!
-    - run: mvn deploy
+    - run: mvn -s clean install
+
+    - run: mvn -s .circleci.settings.xml deploy
