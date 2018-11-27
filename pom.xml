@@ -6,7 +6,7 @@
 
     <groupId>com.h8.nh</groupId>
     <artifactId>nhood-parent-bom</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -42,6 +42,7 @@
         <mockito.version>2.21.0</mockito.version>
 
         <surfire.plugin.version>2.22.0</surfire.plugin.version>
+        <jacoco.plugin.version>0.8.2</jacoco.plugin.version>
         <spotbugs.plugin.version>3.1.8</spotbugs.plugin.version>
         <deploy.plugin.version>2.8.1</deploy.plugin.version>
         <resources.plugin.version>3.1.0</resources.plugin.version>
@@ -229,6 +230,12 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.plugin.version}</version>
+                </plugin>
+
+                <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
                     <version>${spotbugs.plugin.version}</version>
@@ -256,6 +263,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <reportsDirectory>${project.parent.basedir}/target/surefire-reports</reportsDirectory>
+                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.junit.platform</groupId>
@@ -263,6 +273,25 @@
                         <version>${junit.platform.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
