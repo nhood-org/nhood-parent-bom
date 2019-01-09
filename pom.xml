@@ -4,7 +4,7 @@
 
     <groupId>com.h8.nh</groupId>
     <artifactId>nhood-parent-bom</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.5</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -57,7 +57,8 @@
         <connection>scm:git:https://github.com/nhood-org/nhood-parent-bom.git</connection>
         <url>http://github.com/nhood-org/nhood-parent-bom</url>
         <developerConnection>scm:git:https://github.com/nhood-org/nhood-parent-bom.git</developerConnection>
-    </scm>
+      <tag>v0.0.5</tag>
+  </scm>
 
     <distributionManagement>
         <repository>
