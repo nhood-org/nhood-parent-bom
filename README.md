@@ -50,8 +50,8 @@ In order to release version, send the following API request to circleCI:
 
 ```bash
 curl -u <CIRCLE_CI_USER_TOKEN> \
-     -d build_parameters[CIRCLE_JOB]=release \
-     https://circleci.com/api/v1.1/project/github/nhood-org/nhood-parent-bom/tree/master
+    -d build_parameters[CIRCLE_JOB]=release \
+    https://circleci.com/api/v1.1/project/github/nhood-org/nhood-parent-bom/tree/master
 ```
 
 ## License
