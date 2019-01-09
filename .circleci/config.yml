@@ -15,13 +15,21 @@ jobs:
     - run: mvn clean install
     - store_test_results:
         path: target/surefire-reports
-            
+
   deploy:
     <<: *defaults
     steps:
     - checkout
     - run: mvn -s .circleci.settings.xml deploy -Dmaven.test.skip=true
-    
+
+  release:
+    <<: *defaults
+    steps:
+    - checkout
+    - run: git config --global user.email "$GITHUB_EMAIL"
+    - run: git config --global user.name "$GITHUB_USERNAME"
+    - run: mvn -s .circleci.settings.xml -B release:prepare -Dmaven.test.skip=true
+
 workflows:
   version: 2
   build-deploy:

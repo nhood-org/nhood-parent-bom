@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.h8.nh</groupId>
@@ -13,7 +11,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.1.RELEASE</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <properties>
@@ -46,12 +44,20 @@
         <jacoco.plugin.version>0.8.2</jacoco.plugin.version>
         <spotbugs.plugin.version>3.1.8</spotbugs.plugin.version>
         <deploy.plugin.version>2.8.1</deploy.plugin.version>
+        <release.plugin.version>2.5.3</release.plugin.version>
         <resources.plugin.version>3.1.0</resources.plugin.version>
         <github.plugin.version>0.12</github.plugin.version>
 
-        <!--Deployment-->
+        <!--Servers-->
         <github.global.server>github</github.global.server>
+        <project.scm.id>github</project.scm.id>
     </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/nhood-org/nhood-parent-bom.git</connection>
+        <url>http://github.com/nhood-org/nhood-parent-bom</url>
+        <developerConnection>scm:git:https://github.com/nhood-org/nhood-parent-bom.git</developerConnection>
+    </scm>
 
     <distributionManagement>
         <repository>
@@ -262,6 +268,11 @@
                 </plugin>
 
                 <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${release.plugin.version}</version>
+                </plugin>
+
+                <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${resources.plugin.version}</version>
                 </plugin>
@@ -396,6 +407,15 @@
                         <phase>deploy</phase>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
             </plugin>
         </plugins>
     </build>
