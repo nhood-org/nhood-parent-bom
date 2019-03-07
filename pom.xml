@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
+        <version>2.1.3.RELEASE</version>
         <relativePath />
     </parent>
 
@@ -20,7 +20,7 @@
         <java.version>11</java.version>
 
         <spring-boot-admin.version>2.0.2</spring-boot-admin.version>
-        <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 
         <!--Service auxiliaries-->
         <modelmapper.version>2.3.0</modelmapper.version>
@@ -40,7 +40,7 @@
         <mockito.version>2.21.0</mockito.version>
 
         <checkstyle.plugin.version>3.0.0</checkstyle.plugin.version>
-        <surfire.plugin.version>2.22.0</surfire.plugin.version>
+        <surfire.plugin.version>3.0.0-M3</surfire.plugin.version>
         <jacoco.plugin.version>0.8.2</jacoco.plugin.version>
         <spotbugs.plugin.version>3.1.8</spotbugs.plugin.version>
         <deploy.plugin.version>2.8.1</deploy.plugin.version>
@@ -67,14 +67,6 @@
             <url>file://${project.build.directory}/mvn-repo</url>
         </repository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
