@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.0.6-blue.svg?maxAge=2592000)](https://github.com/nhood-org/nhood-parent-bom/releases/tag/v0.0.6)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?maxAge=2592000)](https://github.com/nhood-org/nhood-parent-bom/releases/tag/v0.1.0)
 [![CircleCI](https://circleci.com/gh/nhood-org/nhood-parent-bom.svg?style=shield)](https://circleci.com/gh/nhood-org/nhood-parent-bom)
 
 # Parent BOM
@@ -10,7 +10,6 @@ The `nhood-parent-bom` is a maven parent project for all `nhood` maven projects.
 
 ## Pre-requisites
 
-- Java 11
 - Maven
 
 ## Build
