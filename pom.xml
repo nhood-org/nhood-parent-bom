@@ -40,10 +40,15 @@
     </scm>
 
     <distributionManagement>
-        <repository>
+	<snapshotRepository>
             <id>internal.repo</id>
             <name>Temporary Staging Repository</name>
             <url>file://${project.build.directory}/mvn-repo</url>
+        </snapshotRepository>
+	<repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+	    <url>https://maven.pkg.github.com/nhood-org/nhood-repository</url>
         </repository>
     </distributionManagement>
 
@@ -244,43 +249,10 @@
                         <phase>verify</phase>
                     </execution>
                 </executions>
-            </plugin>
+	    </plugin>
 
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo
-                    </altDeploymentRepository>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <configuration>
-                    <message>Maven artifacts for ${project.artifactId} ${project.version}</message>
-                    <noJekyll>true</noJekyll>
-                    <merge>true</merge>
-                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                    <branch>refs/heads/mvn-repo</branch>
-                    <includes>
-                        <include>**/*</include>
-                    </includes>
-                    <repositoryName>nhood-repository</repositoryName>
-                    <repositoryOwner>nhood-org</repositoryOwner>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
+	    <plugin>
+	    	<groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
