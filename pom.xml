@@ -4,7 +4,7 @@
 
     <groupId>com.h8.nh</groupId>
     <artifactId>nhood-parent-bom</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -14,7 +14,6 @@
         <!--Test-->
         <junit.jupiter.version>5.6.0</junit.jupiter.version>
         <junit.platform.version>1.6.0</junit.platform.version>
-        <junit.platform-surefire.version>1.3.2</junit.platform-surefire.version>
         <assertj.version>3.15.0</assertj.version>
         <mockito.version>3.2.4</mockito.version>
 
@@ -41,15 +40,15 @@
     </scm>
 
     <distributionManagement>
-	<snapshotRepository>
+        <snapshotRepository>
             <id>internal.repo</id>
             <name>Temporary Staging Repository</name>
             <url>file://${project.build.directory}/mvn-repo</url>
         </snapshotRepository>
-	<repository>
+        <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-	    <url>https://maven.pkg.github.com/nhood-org/nhood-parent-bom</url>
+            <url>https://maven.pkg.github.com/nhood-org/repository</url>
         </repository>
     </distributionManagement>
 
@@ -164,7 +163,7 @@
                         <sourceDirectory>src/main/java</sourceDirectory>
                     </sourceDirectories>
                     <configLocation>
-                        https://raw.githubusercontent.com/checkstyle/checkstyle/checkstyle-8.29/src/main/resources/google_checks.xml
+                        https://raw.githubusercontent.com/nhood-org/nhood-parent-bom/master/checkstyle.xml
                     </configLocation>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
@@ -194,13 +193,6 @@
                 <configuration>
                     <reportsDirectory>${project.parent.basedir}/target/surefire-reports</reportsDirectory>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform-surefire.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <plugin>
@@ -250,10 +242,10 @@
                         <phase>verify</phase>
                     </execution>
                 </executions>
-	    </plugin>
+            </plugin>
 
-	    <plugin>
-	    	<groupId>org.apache.maven.plugins</groupId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>

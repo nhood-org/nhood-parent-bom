@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?maxAge=2592000)](https://github.com/nhood-org/nhood-repository/packages/101341)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?maxAge=2592000)](https://github.com/nhood-org/repo/packages/122579)
 [![CircleCI](https://circleci.com/gh/nhood-org/nhood-parent-bom.svg?style=shield)](https://circleci.com/gh/nhood-org/nhood-parent-bom)
 
 # Parent BOM
@@ -48,7 +48,7 @@ Configuration of CI is implemented in `.circleci` and `.circleci.setting.xmls`.
 In order to release version, send the following API request to circleCI:
 
 ```bash
-curl -u <CIRCLE_CI_USER_TOKEN> \
+curl -u $CIRCLE_CI_USER_TOKEN: \
     -d build_parameters[CIRCLE_JOB]=release \
     https://circleci.com/api/v1.1/project/github/nhood-org/nhood-parent-bom/tree/master
 ```
