@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?maxAge=2592000)](https://github.com/nhood-org/repo/packages/122579)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?maxAge=2592000)](https://github.com/nhood-org/repository/packages/125790)
 [![CircleCI](https://circleci.com/gh/nhood-org/nhood-parent-bom.svg?style=shield)](https://circleci.com/gh/nhood-org/nhood-parent-bom)
 
 # Parent BOM
