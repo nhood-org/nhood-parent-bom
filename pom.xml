@@ -47,7 +47,7 @@
         </snapshotRepository>
         <repository>
             <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
+            <name>GitHub nhood-org Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/nhood-org/repository</url>
         </repository>
     </distributionManagement>
