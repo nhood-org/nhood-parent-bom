@@ -18,7 +18,7 @@
         <mockito.version>3.3.3</mockito.version>
 
         <checkstyle.plugin.version>3.1.1</checkstyle.plugin.version>
-        <surfire.plugin.version>3.0.0-M4</surfire.plugin.version>
+        <surfire.plugin.version>3.0.0-M5</surfire.plugin.version>
         <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
         <spotbugs.plugin.version>4.0.0</spotbugs.plugin.version>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
