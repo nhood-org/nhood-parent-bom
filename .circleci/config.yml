@@ -11,24 +11,28 @@ jobs:
   build:
     <<: *defaults
     steps:
-    - checkout
-    - run: mvn clean install
+    - restore_cache:
+        keys:
+        - m2-cache-v0.1
+    - run: make build-ci
     - store_test_results:
         path: target/surefire-reports
+    - save_cache:
+        key: m2-cache-v0.1
+        paths:
+        - "$HOME/.m2"
 
   deploy:
     <<: *defaults
     steps:
     - checkout
-    - run: mvn -s .circleci.settings.xml deploy -Dmaven.test.skip=true
+    - run: make deploy-ci
 
   release:
     <<: *defaults
     steps:
     - checkout
-    - run: git config --global user.email "$GITHUB_EMAIL"
-    - run: git config --global user.name "$GITHUB_USERNAME"
-    - run: mvn -s .circleci.settings.xml -B release:prepare -Dmaven.test.skip=true
+    - run: make release-ci
 
 workflows:
   version: 2

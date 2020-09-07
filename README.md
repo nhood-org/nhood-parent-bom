@@ -12,25 +12,9 @@ The `nhood-parent-bom` is a maven parent project for all `nhood` maven projects.
 
 - Maven
 
-## Build
+## Build, test
 
-In order to build the project use the following maven command:
-
-```bash
-mvn clean install
-```
-
-## Test
-
-In order to test the project use the following maven command:
-
-```bash
-mvn clean test
-```
-
-## Run
-
-Project is not a stand-alone application therefore it cannot be run.
+Use pre-defined Makefile tasks
 
 ## CI/CD
 
@@ -45,12 +29,11 @@ Configuration of CI is implemented in `.circleci` and `.circleci.setting.xmls`.
 
 ## Versioning
 
-In order to release version, send the following API request to circleCI:
+In order to release version of maven artifacts, send the following API request to circleCI:
 
 ```bash
-curl -u $CIRCLE_CI_USER_TOKEN: \
-    -d build_parameters[CIRCLE_JOB]=release \
-    https://circleci.com/api/v1.1/project/github/nhood-org/nhood-parent-bom/tree/master
+export CIRCLE_CI_USER_TOKEN=<CIRCLE_CI_USER_TOKEN>
+make trigger-circle-ci-maven-release
 ```
 
 ## License
