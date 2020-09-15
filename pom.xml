@@ -13,7 +13,7 @@
 
         <!--Test-->
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
-        <junit.platform.version>1.6.2</junit.platform.version>
+        <junit.platform.version>1.7.0</junit.platform.version>
         <mockito.version>3.5.10</mockito.version>
         <assertj.version>3.17.2</assertj.version>
 
@@ -173,7 +173,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.36</version>
+                        <version>8.36.1</version>
                     </dependency>
                 </dependencies>
                 <executions>
